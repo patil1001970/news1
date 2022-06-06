@@ -35,14 +35,14 @@ export default function RecipeReviewCard(props) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345,border:.5 }}>
       <CardHeader
         avatar={
-          <Typography sx={{ maxwidth: '20' }} variant="body1" color="red">
-            {props.article.author}
-            <br />
+          <Typography sx={{maxwidth:"20"}} variant="body1" color="red">
+            {props.article.author}<br/>
           </Typography>
         }
+        
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
@@ -63,17 +63,16 @@ export default function RecipeReviewCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <Button variant="contained">Contained</Button>
+       
+        <div styled={{alignContent:"center"}}>
+        <Button variant="contained" target="_blank"  href={props.article.url}>More...</Button>
+        </div>
+        
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>{props.article.content}</Typography>
+        
         </CardContent>
       </Collapse>
     </Card>
