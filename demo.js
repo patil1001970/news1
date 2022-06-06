@@ -16,14 +16,18 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
-const updateNews=>async (){
 
-}
 export default function FixedColumns() {
+
+
+  const updateNews= async ()=>{
+
+  }
+
   const {articles}=MyJson;
   return (
-    <Box sx={{ align:'center', minHeight: 253 }}>
-    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }}>
+    <Box sx={{  minHeight: 253 }}>
+    <Grid container sx={{p:5}} spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }}>
         {articles.map((height, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
           <Mycard key={index} article={height}/>
